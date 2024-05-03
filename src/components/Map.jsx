@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { BUILDINGS } from "../../constant";
 import CurrentPositionButton from "./CurrentPositionButton";
 import { icon } from "leaflet";
+import { Link } from "react-router-dom";
 
 const KU_LAT = 17.29180315473355;
 const KU_LNG = 104.11289771644637;
@@ -21,12 +22,12 @@ function Map({ selectedBuilding, coords }) {
   );
 
   const buildingIcon = icon({
-    iconUrl: "../../public/building.svg",
+    iconUrl: "/building.svg",
     iconSize: [32, 32],
   });
 
   const userIcon = icon({
-    iconUrl: "../../public/person.svg",
+    iconUrl: "/person.svg",
     iconSize: [32, 32],
   });
 
@@ -66,6 +67,25 @@ function Map({ selectedBuilding, coords }) {
       <SetViewOnClick />
 
       <CurrentPositionButton coords={coords} />
+
+      <div className="absolute z-[1000] bottom-10 left-6 ">
+        <Link
+          replace
+          to={"https://www.youtube.com/watch?v=oHg5SJYRHA0"}
+          className="relative"
+        >
+          <img
+            src="/happy.jpg"
+            alt="avatar"
+            className="rounded-full w-10 h-10 border border-gray-600 hover:scale-150 transition-all duration-200"
+          />
+          <img
+            src="/question.svg"
+            alt="question"
+            className="rounded-full w-8 h-8 rotate-12 absolute bottom-8 left-7 "
+          />
+        </Link>
+      </div>
     </MapContainer>
   );
 }
