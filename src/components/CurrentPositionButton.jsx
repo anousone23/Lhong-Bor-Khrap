@@ -6,7 +6,7 @@ function CurrentPositionButton({ coords }) {
 
   function handleSetViewToCurrentPosition(coords) {
     if (coords.lat && coords.lng) {
-      map.setView([coords.lat, coords.lng], map.getZoom(), {
+      map.setView([coords.lat, coords.lng], 18, {
         animate: true,
       });
     }
