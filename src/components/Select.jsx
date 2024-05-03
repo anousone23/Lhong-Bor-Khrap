@@ -5,7 +5,7 @@ function Select({ selectedBuilding, setSelectedBuilding }) {
     <select
       name="building"
       id="building"
-      className="w-2/6 text-center bg-gray-200 text-gray-900 font-bold text-xl px-2 py-1  border border-gray-500 rounded-lg absolute z-[1000] top-1 right-1"
+      className="w-2/5 text-center bg-gray-200 text-gray-900 font-bold text-xl px-2 py-1  border border-gray-500 rounded-lg absolute z-[1000] top-1 right-1"
       value={selectedBuilding}
       onChange={(e) => setSelectedBuilding(e.target.value)}
     >
