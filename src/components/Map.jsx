@@ -1,11 +1,4 @@
-import {
-  MapContainer,
-  Marker,
-  Popup,
-  TileLayer,
-  useMap,
-  useMapEvent,
-} from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { useEffect } from "react";
 
 import { BUILDINGS } from "../../constant";
@@ -64,8 +57,6 @@ function Map({ selectedBuilding, coords }) {
         </Marker>
       )}
 
-      <SetViewOnClick />
-
       <CurrentPositionButton coords={coords} />
 
       <div className="absolute z-[1000] bottom-10 left-6 ">
@@ -88,18 +79,6 @@ function Map({ selectedBuilding, coords }) {
       </div>
     </MapContainer>
   );
-}
-
-function SetViewOnClick() {
-  const map = useMapEvent("click", (e) => {
-    console.log(e);
-
-    map.setView(e.latlng, map.getZoom(), {
-      animate: true,
-    });
-  });
-
-  return null;
 }
 
 function MapEvent({ building }) {
